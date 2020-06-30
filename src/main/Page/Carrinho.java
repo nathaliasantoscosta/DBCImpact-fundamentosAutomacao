@@ -55,20 +55,20 @@ public class Carrinho{
         return this;
     }
 
-    public String validaMensagem(){
-        String mensagem = wait.waitVisibleElement(mensagemSucesso).getText();
-        return mensagem;
-    }
-
     public Carrinho clickRemoverItem(){
         wait.waitClickableElement(removerItem).click();
         Utils.scrollUp(driver);
         return this;
     }
 
-    public String validaMensagemCarrinhoVazio(){
-        String mensagem = wait.waitVisibleElement(mensagemSucesso).getText();
+    public String checkMensagemCarrinhoVazio(){
+        String mensagem = wait.waitVisibleElement(mensagemCarrinhoVazio).getText();
         return mensagem;
+    }
+
+    public String validaMensagemSucesso(){
+        String mensagemSucesso = wait.waitVisibleElement(MensagemSucesso).getText();
+        return mensagemSucesso;
     }
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/p[2]/a[1]/span")
@@ -89,14 +89,13 @@ public class Carrinho{
     @FindBy(xpath = "//*[@id=\"cart_navigation\"]/button/span")
     private WebElement confirmOrderButtom;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div/p/strong")
-    private WebElement mensagemSucesso;
-
     @FindBy(className = "icon-trash")
     private WebElement removerItem;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/p")
+    @FindBy(xpath = "//p[text()='Your shopping cart is empty.']")
     private WebElement mensagemCarrinhoVazio;
 
+    @FindBy(xpath = "//strong[text()='Your order on My Store is complete.']")
+    private WebElement MensagemSucesso;
 
 }

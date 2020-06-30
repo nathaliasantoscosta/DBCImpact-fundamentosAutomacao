@@ -24,6 +24,8 @@ public class RealizarLoginTest {
                 .email()
                 .senha()
                 .clickSubmit();
+
+//        driver.quit();
     }
 
 }

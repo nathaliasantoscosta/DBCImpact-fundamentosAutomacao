@@ -35,9 +35,9 @@ public class RemoverItemCarrinhoTest {
         Carrinho carrinho = new Carrinho(driver);
         carrinho.clickRemoverItem();
 
-        String validaMensagem = new Carrinho(driver).validaMensagemCarrinhoVazio();
+        String validaMensagem = new Carrinho(driver).checkMensagemCarrinhoVazio();
         Assert.assertTrue(validaMensagem.equals("Your shopping cart is empty."));
 
-        driver.quit();
+//        driver.quit();
     }
 }

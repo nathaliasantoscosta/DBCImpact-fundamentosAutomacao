@@ -40,7 +40,7 @@ public class RealizarCompraTest{
                 .clickTransferenciaBancaria()
                 .clickConfirmarOrder();
 
-        String validaMensagem = new Carrinho(driver).validaMensagem();
+        String validaMensagem = new Carrinho(driver).validaMensagemSucesso();
         Assert.assertTrue(validaMensagem.equals("Your order on My Store is complete."));
 
         driver.quit();
