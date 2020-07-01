@@ -12,13 +12,9 @@
 *.zip
 *.tar.gz
 *.rar
-*.iml
 *.html
-config.properties
 
 target/
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
